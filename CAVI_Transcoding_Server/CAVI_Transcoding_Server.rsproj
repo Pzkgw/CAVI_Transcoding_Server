@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">default</Platform>
+    <ProjectGuid>0cbed213-9a4e-4d18-a886-a4e893d1f68e</ProjectGuid>
+    <OutputType>exe</OutputType>
+    <CrateName>CAVI_Transcoding_Server</CrateName>
+    <Name>CAVI_Transcoding_Server</Name>
+    <RootNamespace>CAVI_Transcoding_Server</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|default' ">
+    <LinkTimeOptimization>false</LinkTimeOptimization>
+    <DebugSymbols>true</DebugSymbols>
+    <OptimizationLevel>0</OptimizationLevel>
+    <PlatformTarget>default</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|default' ">
+    <LinkTimeOptimization>false</LinkTimeOptimization>
+    <DebugSymbols>false</DebugSymbols>
+    <OptimizationLevel>2</OptimizationLevel>
+    <PlatformTarget>default</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="src\" />
+    <Code Include="src\main.rs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\VisualRust\VisualRust.Rust.targets" />
+</Project>
