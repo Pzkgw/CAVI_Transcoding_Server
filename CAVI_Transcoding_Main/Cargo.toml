@@ -1,0 +1,5 @@
+[package]
+name = "CAVI_Transcoding_Main"
+version = "0.1.0"
+authors = ["pzkgw <probearray@gmail.com>"]
+[dependencies]
