@@ -13,14 +13,14 @@ fn gcd(mut n: u64, mut m: u64) -> u64 {
     }
     n
 }
-
-fn main() {
+fn cavi_transcoding_main() {
+    //afd
     let mut numbers = Vec::new();
     for arg in std::env::args().skip(1) {
         numbers.push(u64::from_str(&arg).expect("error parsing argument"));
     }
     if numbers.len() == 0 {
-        writeln!(std::io::stderr(), "Usage: gcd NUMBER ...").unwrap();
+        writeln!(std::io::stderr(), "Usage2: gcd NUMBER ...").unwrap();
         std::process::exit(1);
     }
     let mut d = numbers[0];
@@ -28,4 +28,9 @@ fn main() {
         d = gcd(d, *m);
     }
     println!("The greatest common divisor of {:?} is {}", numbers, d);
+
+}
+
+fn main() {
+    cavi_transcoding_main();
 }
