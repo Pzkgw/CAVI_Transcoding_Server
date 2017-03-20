@@ -1,35 +1,31 @@
-use std::fmt; // Import `fmt`
+use std::io::Write;
+use std::str::FromStr;
 
-// Derive the `fmt::Debug` implementation for `Structure`. `Structure`
-// is a structure which contains a single `i32`.
-#[derive(Debug)]
-struct Structure(i32);
-
-// Implement `Display` for `MinMax`.
-impl fmt::Display for Structure {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // Use `self.number` to refer to each positional data point.
-        write!(f,"{0}", self.0)
+fn gcd(mut n: u64, mut m: u64) -> u64 {
+    assert!(n != 0 && m != 0);
+    while m != 0 {
+        if m < n {
+            let t = m;
+            m = n;
+            n = t;
+        }
+        m = m % n;
     }
+    n
 }
 
-// Put a `Structure` inside of the structure `Deep`. Make it printable
-// also.
-#[derive(Debug)]
-struct Deep(Structure);
-
 fn main() {
-    // Printing with `{:?}` is similar to with `{}`.
-    println!("{:?} months in a year.", 12);
-    println!("{1:?} {0:?} is the {actor:?} name.",
-             "Slater",
-             "Christian",
-             actor="actor's");
-
-    // `Structure` is printable!
-    println!("Now {0} will print!", Structure(3));
-
-    // The problem with `derive` is there is no control over how
-    // the results look. What if I want this to just show a `7`?
-    println!("Now {:?} will print!", Deep(Structure(7)));
+    let mut numbers = Vec::new();
+    for arg in std::env::args().skip(1) {
+        numbers.push(u64::from_str(&arg).expect("error parsing argument"));
+    }
+    if numbers.len() == 0 {
+        writeln!(std::io::stderr(), "Usage: gcd NUMBER ...").unwrap();
+        std::process::exit(1);
+    }
+    let mut d = numbers[0];
+    for m in &numbers[1..] {
+        d = gcd(d, *m);
+    }
+    println!("The greatest common divisor of {:?} is {}", numbers, d);
 }
