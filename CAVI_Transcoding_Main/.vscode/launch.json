@@ -5,7 +5,7 @@
             "name": "Debug",
             "type": "gdb",
             "request": "launch",
-            "target": "target/debug/${workspaceRootFolderName}",
+            "target": "target/debug/CAVI_Transcoding_Main",// ${workspaceRootFolderName}
             "cwd": "${workspaceRoot}"
         }
     ]
