@@ -3,3 +3,13 @@ name = "CAVI_Transcoding_Main"
 version = "0.1.0"
 authors = ["pzkgw <probearray@gmail.com>"]
 [dependencies]
+# librtsp = { path = "c:\\_ToDo\\CAVI_Transcoding_Server\\trunk\\rtsp\\target\\release\\librtsp.rlib" }
+# rand = { git = "https://github.com/rust-lang-nursery/rand.git" }
+#futures = "0.1.13"
+#futures-cpupool = "0.1"
+#tokio-core = "0.1.6"
+#tokio-proto = "0.1"
+#tokio-service = "0.1"
+#tokio-io = "0.1"
+#[features]
+#default = []

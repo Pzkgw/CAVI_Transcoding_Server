@@ -1,7 +1,16 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-    "editor.fontSize": 18,
-    "editor.cursorStyle": "line-thin",
-    "rust.formatOnSave": true,
-    "rust.checkOnSave": true
+	// "rust.racerPath": "c:\\users\\bogdan.visoiu\\.cargo\\bin\\racer.exe", // Specifies path to Racer binary if it's not in PATH
+	// "rust.rustLangSrcPath": "c:\\Users\\bogdan.visoiu\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\lib\\rustlib\\src\\rust\\src", // Specifies path to /src directory of local copy of Rust sources
+	// "rust.rustfmtPath": "c:\\users\\bogdan.visoiu\\.cargo\\bin\\rustsym.exe", // Specifies path to Rustfmt binary if it's not in PATH
+	// "rust.rustsymPath": "c:\\users\\bogdan.visoiu\\.cargo\\bin\\rustfmt.exe", // Specifies path to Rustsym binary if it's not in PATH
+	// "rust.cargoPath": "c:\\users\\bogdan.visoiu\\.rustup\toolchains\\nightly-x86_64-pc-windows-msvc\\bin\\cargo.exe", // Specifies path to Cargo binary if it's not in PATH
+	// "rust.cargoHomePath": "c:\\users\\bogdan.visoiu\\.cargo\\", // Path to Cargo home directory, mostly needed for racer. Needed only if using custom rust installation.
+	"rust.cargoEnv": null, // Specifies custom variables to set when running cargo. Useful for crates which use env vars in their build.rs (like openssl-sys).
+	"rust.formatOnSave": false, // Turn on/off autoformatting file on save (EXPERIMENTAL)
+	"rust.checkOnSave": false, // Turn on/off `cargo check` project on save (EXPERIMENTAL)
+	"rust.checkWith": "build", // Specifies the linter to use. (EXPERIMENTAL)
+	"rust.useJsonErrors": false, // Enable the use of JSON errors (requires Rust 1.7+). Note: This is an unstable feature of Rust and is still in the process of being stablised
+	"rust.useNewErrorFormat": false, // "Use the new Rust error format (RUST_NEW_ERROR_FORMAT=true). Note: This flag is mutually exclusive with `useJsonErrors`.
+  "editor.cursorStyle": "line-thin"
 }
